@@ -14,7 +14,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
   <component name="ProjectId" id="1WIj6CUaGPpSvmaj3X691PJLrbq" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +28,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.." />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="blackjack" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -79,22 +88,26 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1379" height="217" key="GridCell.Tab.0.bottom" timestamp="1578859969100">
+    <state x="320" y="127" key="#Notifications" timestamp="1578863586456">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578859969100" />
-    <state width="1379" height="217" key="GridCell.Tab.0.center" timestamp="1578859969099">
+    <state x="320" y="127" key="#Notifications/0.23.1440.877@0.23.1440.877" timestamp="1578863586456" />
+    <state width="1379" height="217" key="GridCell.Tab.0.bottom" timestamp="1578862950790">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1578859969099" />
-    <state width="1379" height="217" key="GridCell.Tab.0.left" timestamp="1578859969099">
+    <state width="1379" height="217" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1578862950790" />
+    <state width="1379" height="217" key="GridCell.Tab.0.center" timestamp="1578862950789">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1578859969099" />
-    <state width="1379" height="217" key="GridCell.Tab.0.right" timestamp="1578859969099">
+    <state width="1379" height="217" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1578862950789" />
+    <state width="1379" height="217" key="GridCell.Tab.0.left" timestamp="1578862950789">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
-    <state width="1379" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1578859969099" />
+    <state width="1379" height="217" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1578862950789" />
+    <state width="1379" height="217" key="GridCell.Tab.0.right" timestamp="1578862950790">
+      <screen x="0" y="23" width="1440" height="877" />
+    </state>
+    <state width="1379" height="217" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1578862950790" />
     <state x="229" y="100" key="SettingsEditor" timestamp="1578853299220">
       <screen x="0" y="23" width="1440" height="877" />
     </state>
