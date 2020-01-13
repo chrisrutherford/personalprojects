@@ -1,7 +1,8 @@
 ---
 title: "STA4032 Final Project: R Simulations"
-author: "Rafael Botero, Brooke Kanonik, Catherine Roy, Chris Rutherford"
+author: "Christopher Rutherford"
 output: html_document
+date: Spring 2018
 runtime: shiny
 ---
 
@@ -13,7 +14,7 @@ library(ggplot2)
 ```
 
 
-```{r app,echo=F}
+```{r app, echo=F}
 shinyApp(
 ui <- fluidPage(
   ## paste shiny code from app.R below this line
