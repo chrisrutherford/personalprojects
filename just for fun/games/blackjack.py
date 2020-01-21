@@ -15,9 +15,9 @@ def blackjack():
     points = points + card1 + card2
 
     print("You have {} points.".format(points))
-    next_move = input("(H)it or (S)urrender?: ")
+    next_move = input("(H)it or (S)tand?: ")
     while upper(next_move)!='S' or upper(next_move)!='H':
-        next_move = input("(H)it or (S)urrender?: ")
+        next_move = input("(H)it or (S)tand?: ")
     if upper(next_move) == 'S':
         print("You finished with {} points.".format(points))
     while upper(next_move) == 'H' and points < 21:
