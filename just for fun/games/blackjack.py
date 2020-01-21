@@ -1,28 +1,36 @@
 import numpy as np
-from numpy.core.defchararray import upper
 
 faces = (2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "King", "Queen", "Ace")
 
+
 def blackjack():
     print("Let's play!")
-    ace_value = input("Should an Ace be worth 1 or 11 points? ")
+    ace_value = int(input("Should an Ace be worth 1 or 11 points? "))
     points = 0
+    cards = []
     card1face = np.random.choice(faces)
+    cards.append(card1face)
     card2face = np.random.choice(faces)
+    cards.append(card2face)
     print("Your first card is {}, and your second is {}.".format(card1face, card2face))
-    card1 = card(card1face, ace_value)
-    card2 = card(card2face, ace_value)
+    card1 = card_value(card1face, ace_value)
+    card2 = card_value(card2face, ace_value)
     points = points + card1 + card2
-
     print("You have {} points.".format(points))
+
+    ## TODO: fix this looping issue
     next_move = input("(H)it or (S)tand?: ")
-    while upper(next_move)!='S' or upper(next_move)!='H':
-        next_move = input("(H)it or (S)tand?: ")
-    if upper(next_move) == 'S':
-        print("You finished with {} points.".format(points))
-    while upper(next_move) == 'H' and points < 21:
+    while next_move.upper() != 'S' or next_move.upper() != 'H':
+        next_move = str(input("I said (H)it or (S)tand?: "))
+        print(next_move.upper() != 'S' or next_move.upper() != 'H')
+    if next_move.upper() == "S":
+        pass
+    while 'H' == next_move.upper() and points < 21:
         new_card_face = np.random.choice(faces)
-        new_card = card(new_card_face, ace_value)
+        cards.append(new_card_face)
+        if "Ace" in cards and points>21:
+            points -= 10
+        new_card = card_value(new_card_face, ace_value)
         print("Your new card is {}.".format(new_card_face))
         points += new_card
         print("You now have {} points.\n".format(points))
@@ -35,9 +43,9 @@ def blackjack():
             next_move = input("(H)it or (S)urrender?: ")
 
 
-def card(face, ace_value):
+def card_value(face, ace_value):
     if face == "Ace":
-        return ace_value
+        return int(ace_value)
     if face == "Jack" or face == "King" or face == "Queen":
         return 10
     else:
@@ -45,12 +53,13 @@ def card(face, ace_value):
 
 
 x = input("Welcome to Blackjack. Do you feel lucky, pal? Y/N: ")
-if upper(x) == 'N':
-    print("Oh. Alright then. Goodbye.")
-else:
+if x.upper() == 'Y':
     blackjack()
+else:
+    print("Oh. Alright then. Goodbye.")
+
 
 replay = input("\nPlay again? Y/N: ")
-while upper(replay) != 'N':
+while replay.upper() != 'N':
     blackjack()
     replay = input("\nPlay again? Y/N: ")
