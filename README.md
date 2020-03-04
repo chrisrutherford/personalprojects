@@ -1,7 +1,8 @@
 # Christopher Rutherford
-Academic and personal projects in R and Python
+Various academic and personal projects, primarily done in R and Python.
+## In progress personal project: [Segmentation GPU Kernel Performance](https://www.kaggle.com/rupals/gpu-runtime)
 
-## Larger scale projects:
+## Larger scale academic projects:
 ### [Intro to Data Science (Fall 2018)](https://github.com/chrisrutherford/projects/tree/master/kickstarter "Kickstarter Campaign Analysis")
 ### [Survival Analysis (Fall 2019)](https://github.com/chrisrutherford/projects/blob/master/academic/pbc%20analysis.R)
 
