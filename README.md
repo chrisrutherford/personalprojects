@@ -1,6 +1,5 @@
 # Christopher Rutherford
 Various academic and personal projects, primarily done in R and Python.
-## In progress personal project: [Hotel Booking Demand](https://github.com/chrisrutherford/projects/tree/master/hotel)
 
 ## Larger scale academic projects:
 ### [Intro to Data Science (Fall 2018)](https://github.com/chrisrutherford/projects/tree/master/kickstarter "Kickstarter Campaign Analysis")
