@@ -16,7 +16,7 @@ library(ggplot2)
 
 ```{r app, echo=F}
 shinyApp(
-ui <- fluidPage(
+ui <- fillPage(
   ## paste shiny code from app.R below this line
   navbarPage("Select an option:",
 #Rolling Dice####
