@@ -5,8 +5,8 @@ account: christopherrutherford
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 3313205
-bundleId: 3914325
+bundleId: 3914350
 url: https://christopherrutherford.shinyapps.io/simulations/
-when: 1606520394.96619
+when: 1606521180.0279
 asMultiple: FALSE
 asStatic: FALSE
