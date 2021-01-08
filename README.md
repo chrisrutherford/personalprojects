@@ -1,6 +1,8 @@
 # Christopher Rutherford
 Various academic and personal projects, primarily done in R and Python.
 
+Current personal project: [analyzing historical Atlantic hurricane season data](hurricanes)
+
 ## Main Academic Projects
 ### [Prob/Stats for Engineers - Probability simulations (Undergraduate, Spring 2018)](academic/simulation)
 ### [Intro to Data Science - Kickstarter campaign analysis and prediction models (Undergraduate, Fall 2018)](academic/kickstarter)
