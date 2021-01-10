@@ -6,4 +6,6 @@ The coin flipping simulation is similar to the dice roll, as it also demonstrate
 
 The dart simulation demonstrates how general randomness can occur. It also shows us how points near the center of the underlying distribution occur much more often compared to outliers that are far from the center.
 
+The random walk demonstrates how certain real world stochastic objects behave. The first that comes to mind for most is the price of a stock, as it tends to fluctuates up and down for the most part. The 1D random walk only goes up or down, while the 2D random walk can go up, down, left, or right.
+
 [Click here](https://christopherrutherford.shinyapps.io/simulations/) to access the shiny app on the web.
