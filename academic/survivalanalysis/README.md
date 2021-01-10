@@ -1,1 +1,2 @@
-
+### Survival Analysis - UDCA Clinical Trial on PBC Patients
+This projects involves the analysis of a clinical trial of patients suffering from primary biliary cholangitis (PBC). Two groups were used in this study - one (treatment) group given the novel treatment, UDCA, and the placebo group. In summary, the goal was to assess whether UDCA was a truly effective treatment in helping those with PBC. 
