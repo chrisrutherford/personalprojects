@@ -1,7 +1,9 @@
 # Christopher Rutherford
 Various academic and personal projects, primarily done in R and Python.
 
-Current personal project: [analyzing historical Atlantic hurricane season data](hurricanes)
+### Current personal projects
+- [analyzing historical Atlantic hurricane season data](hurricanes)
+- [analyzing data regarding Netflix titles](netflix)
 
 ## Main Academic Projects
 ### [Prob/Stats for Engineers - Probability simulations (Undergraduate, Spring 2018)](academic/simulation)
