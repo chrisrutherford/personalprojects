@@ -1,4 +1,5 @@
-# Brief Descriptions of Projects
+# Academic Projects
+## Descriptions of projects
 
 ### [Simulation](simulation)
 Demonstration of underlying theory of common examples of probability using an R Shiny app (Probability/Statistics for Engineers, Undergraduate, Spring 2018).
