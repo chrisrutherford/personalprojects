@@ -173,47 +173,52 @@ ui <- dashboardPage(skin = "green",
                     column(8, plotOutput("dartsPlot"))),
                 fluidRow(
                     column(4,
-                           numericInput(inputId="darts",label="Number of darts",
-                                        value=0,min=0,max=10000),
-                           sliderInput(inputId="vAcc",label="Veritcal accuracy",
-                                       value=0,min=0,max=1),
-                           sliderInput(inputId="hAcc",label="Horizontal accuracy",
-                                       value=0,min=0,max=1),
+                           numericInput(inputId = "darts", label = "Number of darts",
+                                        value = 10, min = 0, max = 10000),
+                           sliderInput(inputId = "vAcc",label = "Veritcal accuracy",
+                                       value = 0, min=0, max = 1),
+                           sliderInput(inputId = "hAcc", label = "Horizontal accuracy",
+                                       value = 0, min = 0, max = 1),
                            helpText("An accuracy of 0 is completely random, while
                         an accuracy of 1 places the darts into a perfectly straight line.
                                     Setting both to zero centers all of the darts.")),
                     column(4,
-                           sliderInput(inputId="largeRd",label="Radius of large circle",
-                                       min=0,max=1,value=1),
-                           sliderInput(inputId="medRd",label="Radius of medium circle",
-                                       min=0,max=1,value=0.6),
-                           sliderInput(inputId="smallRd",label="Radius of small circle",
-                                       min=0,max=1,value=0.25)),
+                           sliderInput(inputId = "largeRd", label = "Radius of large circle",
+                               min = 0, max = 1, value = 1
+                           ),
+                           sliderInput(inputId = "medRd",  label = "Radius of medium circle",
+                                       min = 0, max = 1, value = 0.6
+                           ),
+                           sliderInput(inputId = "smallRd", label = "Radius of small circle",
+                               min = 0, max = 1, value = 0.25
+                           )), 
                     column(4,
-                           colourInput(inputId="largeCol",label="Color of large circle",
-                                       value="FF0000"),
-                           sliderInput(inputId="largeAlpha",label="Opacity",
-                                       min=0,max=1,value=0.4),
-                           colourInput(inputId="medCol",label="Color of medium circle",
-                                       value="00FF00"),
-                           sliderInput(inputId="medAlpha",label="Opacity",
-                                       min=0,max=1,value=0.4),
-                           colourInput(inputId="smallCol",label="Color of small circle",
-                                       value="0000FF"),
-                           sliderInput(inputId="smallAlpha",label="Opacity",
-                                       min=0,max=1,value=0.4))
+                           colourInput(inputId = "largeCol", label = "Color of large circle",
+                                       value = "FF0000"),
+                           sliderInput(inputId = "largeAlpha", label = "Opacity",
+                                       min = 0, max = 1, value = 0.4),
+                           colourInput(inputId = "medCol", label = "Color of medium circle",
+                                       value = "00FF00"),
+                           sliderInput(inputId = "medAlpha", label = "Opacity",
+                                       min = 0, max = 1, value = 0.4),
+                           colourInput(inputId = "smallCol", label = "Color of small circle",
+                                       value = "0000FF"),
+                           sliderInput(inputId = "smallAlpha", label = "Opacity",
+                                       min = 0, max = 1, value = 0.4))
                 )),
         tabItem(tabName = "walk",
                 fluidRow(
-                    column(4, h4(textOutput("walkTitle")),htmlOutput("walkText")),
+                    column(4, h4(textOutput("walkTitle")),
+                           htmlOutput("walkText"),
+                           htmlOutput("walkLink")),
                     column(8, plotOutput("walkPlot"))),
                 fluidRow(
                     column(4,
-                           selectInput(inputId="walkType",label="Dimensions of walk",
+                           selectInput(inputId="walkType", label="Dimensions of walk",
                                        choices=c("1D","2D"),
                                        selected="1D"),
-                           helpText("1D walks are only up and down, while 2D walks are
-                        up, down, left, and right."),
+                           helpText("For 1D walks, the particle can move up or down,
+                           while for 2D walks, it can move up, down, left, or right."),
                            conditionalPanel(
                                condition="input.walkType==`1D`",
                                numericInput(inputId="steps1D",label="Steps to take",
@@ -252,7 +257,7 @@ ui <- dashboardPage(skin = "green",
                                            value="0000DD")),
                            conditionalPanel(
                                condition="input.walkType==`2D`",
-                               checkboxInput(inputId="aspect",label="Maintain aspect ratio",
+                               checkboxInput(inputId="aspect",label="1:1 aspect ratio",
                                              value=F),
                                checkboxInput(inputId="startPt",label="Show starting point",
                                              value=F),
@@ -301,12 +306,13 @@ server <- function(input, output, session) {
     works in the real world.<br>"
         
         s2 = "The sliders below customize how many dice are thrown in each roll,
-    how many times to throw the die/dice, and other aesthetics.
-    When more than one die is rolled, the sum of the roll is used. <br>"
+    how many times to throw the die/dice, and other aesthetics.<br>"
         
-        s3 = "For 2 dice, the plot follows a triangular distribution. For 3 dice,
-    the graph begins to smooth out and becomes approximately normal as more
-    dice are rolled per roll."
+        s3 = "When rolling 1 die, the distribution tends to a uniform distribution.
+        When more than one die is rolled, the sum of the numbers rolled is used.
+        For 2 dice, the plot follows a triangular distribution. For 3 dice,
+    the graph begins to smooth out and, as the number of dice and rolls increases,
+    becomes approximately normal."
         HTML(paste(s1, s2, s3, sep = "<br>"))
     })
     
@@ -341,10 +347,10 @@ server <- function(input, output, session) {
                       "Theoretical mean:", EX)
         
         if (input$diceNum == 1) {
-            xlabel = paste("Number Rolled on Die")
+            xlabel = paste("Number rolled on die")
         }
         else {
-            xlabel = paste("Sum of Rolling", input$diceNum, "Dice")
+            xlabel = paste("Sum of rolling", input$diceNum, "dice", input$rolls, "times")
         }
         
         if (input$plotSelect == "Barplot") {
@@ -436,11 +442,12 @@ server <- function(input, output, session) {
     Such an experiment follows a binomial distribution, and flipping multiple
     coins also follows a binomial distribution. <br>"
         
-        s2 = "This experiment shows just how common or uncommon a certain amount
-    of heads actually is when flipping a certain amount of coins. <br>"
+        s2 = "This experiment shows how common or uncommon a certain amount
+    of heads actually is when flipping a certain amount of coins. For a large amount
+        of coin flips, the data tends to a normal distribution. <br>"
         
         s3 = "Use the sliders to customize how many coins to flip
-    and how many coins are flipped in each trial.  <br>"
+    and how many coins are flipped in each trial. <br>"
         
         HTML(paste(s1, s2, s3, sep = "<br>"))
     })
@@ -467,7 +474,7 @@ server <- function(input, output, session) {
             col = input$barcol2,
             main = "Barplot of Number of Heads",
             border = input$outline2,
-            xlab = "Number of Heads",
+            xlab = "Number of heads",
             ylab = "Frequency",
             sub = paste(
                 "Sample mean:",
@@ -633,8 +640,8 @@ server <- function(input, output, session) {
     # Info for random walk
     output$walkText <- renderUI({
         s1 = "A random walk is a random process in which an object randomly 'walks'
-    or moves away from a starting point. In the most basic case, an object
-    starts on the number line at zero and has an equal chance of either
+    or moves away from a starting point. In a more simple case, an object
+    starts on the number line at zero and has a chance of either
     increasing or decreasing by one every step.
     <br>"
         
@@ -646,11 +653,16 @@ server <- function(input, output, session) {
     <br>"
         
         s3 = "The probability of moving in a certain direction can be customized,
-    but the probabilities must sum to 1."
+    but the probabilities must sum to 1.<br>"
         
         HTML(paste(s1, s2, s3, sep = "<br>"))
+        
     })
-    
+    output$walkLink <- renderUI({
+        link = a("Click here to read more",
+                 href = "https://www.mit.edu/~kardar/teaching/projects/chemotaxis(AndreaSchmidt)/random.htm")
+        tagList(link)
+    })
     # Plot for random walk
     output$walkPlot <- renderPlot({
         par(bg = NA)
@@ -668,11 +680,11 @@ server <- function(input, output, session) {
                 )
             )
             walkProb1D = c(input$probUp1, input$probDown1)
-            x = sample(
+            x = c(0, sample(
                 x = c(1, -1),
                 size = input$steps1D,
                 replace = T,
-                prob = walkProb1D
+                prob = walkProb1D)
             )
             ylimits = c(min(cumsum(x)), max(cumsum((x))))
             
@@ -682,7 +694,7 @@ server <- function(input, output, session) {
                 type = 'l',
                 col = input$dispColor,
                 sub = paste("Displacement from origin:", tail(cumsum(x), 1)),
-                xlab = "Steps",
+                xlab = "Steps taken",
                 ylab = "Displacement",
                 ylim = ylimits
             )
