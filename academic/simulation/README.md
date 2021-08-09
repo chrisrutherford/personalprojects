@@ -1,4 +1,4 @@
-### [Click here](https://christopherrutherford.shinyapps.io/simulations/) to access the shiny app on the web.
+## [Click here](https://christopherrutherford.shinyapps.io/simulation/) to access the shiny app on the web.
 
 The primary purpose of this project is to demonstrate how various probability distributions (such as normal and binomial) and theorems (such as the central limit theorem) appear in everyday life through various simulations. Additionally, I wanted to teach myself how to make a Shiny app in R; this was the result.
 
