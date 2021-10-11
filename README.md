@@ -2,7 +2,7 @@
 Various academic and personal projects, primarily done in R and Python.
 
 ## Main Academic Projects
-### [Prob/Stats for Engineers - Probability simulations (Undergraduate, Spring 2018)](academic/simulation)
+### [Probability and Statistics for Engineers - Probability simulations (Undergraduate, Spring 2018)](academic/simulation)
 ### [Intro to Data Science - Kickstarter campaign analysis and prediction models (Undergraduate, Fall 2018)](academic/kickstarter)
 ### [Survival Analysis - Analysis of PBC treatment clinical trial (Graduate, Fall 2019)](academic/survivalanalysis)
 ### [World Data Science Institute Internship (Summer 2020 - different repo)](https://github.com/chrisrutherford/wdsi)
